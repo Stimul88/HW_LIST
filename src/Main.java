@@ -7,14 +7,6 @@ public class Main {
         Tasks task = new Tasks();
 
         while (true) {
-//            System.out.println("0. Выход из программы");
-//            System.out.println("1. Добавить дело");
-//            System.out.println("2. Показать дела");
-//            System.out.println("3. Удалить дело по номеру");
-//            System.out.println("4. Удалить дело по названию");
-//            System.out.println("5. Удаление по ключевому слову");
-//            System.out.println("Ваш выбор: ");
-
             System.out.print("\n" +
                     "0. Выход из программы\n" +
                     "1. Добавить дело\n" +
@@ -24,16 +16,7 @@ public class Main {
                     "5. Удаление по ключевому слову\n" +
                     "Ваш выбор: "
             );
-//            System.out.print("\n" +
-//                    "0. Выход из программы\n" +
-//                    "1. Добавить дело\n" +
-//                    "2. Показать дела\n" +
-//                    "3. Удалить дело по номеру\n" +
-//                    "4. Удалить дело по названию\n" +
-//                    "5. Удаление по ключевому слову\n" +
-//                    "Ваш выбор: "
-//            );
-
+//            int input = Integer.parseInt(scanner.next());
             String input = scanner.nextLine();
 
             if (Integer.parseInt(input) == 0) {
@@ -43,7 +26,7 @@ public class Main {
                     case 1:
                         System.out.print("Введите название задачи: ");
                         String addTask = scanner.nextLine();
-                        if(task.setTask(addTask)) {
+                        if (task.setTask(addTask)) {
                             System.out.println("Добавлено!");
 
                             task.getTask();
@@ -54,8 +37,8 @@ public class Main {
                         break;
                     case 3:
                         System.out.print("Введите номер для удаления: ");
-                        String numTask = scanner.next();
-                        if(task.removeTaskNum(Integer.parseInt(numTask))) {
+                        String numTask = scanner.nextLine();
+                        if (task.removeTaskNum(Integer.parseInt(numTask))) {
                             System.out.println("Удалено!");
                             task.getTask();
                         } else {
@@ -65,7 +48,7 @@ public class Main {
                     case 4:
                         System.out.print("Введите задачу для удаления: ");
                         String textTask = scanner.nextLine();
-                        if(task.removeTaskText(textTask)) {
+                        if (task.removeTaskText(textTask)) {
                             System.out.println("Удалено!");
                             task.getTask();
                         } else {
@@ -75,7 +58,7 @@ public class Main {
                     case 5:
                         System.out.print("Введите ключевое слово для удаления: ");
                         String word = scanner.nextLine();
-                        if(task.removeToWord(word)) {
+                        if (task.removeToWord(word)) {
                             System.out.println("Удалено!");
                             task.getTask();
                         } else {
